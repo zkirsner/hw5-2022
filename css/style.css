@@ -1,0 +1,132 @@
+/* USE INSPECT ELEMENT TO FOOL AROUND WITH FLEX LAYOUT: MESS WITH IT UNTIL IT MATCHES THE SCREENSHOTS, FOR STEPS 7, 8, 10-12 */
+/* STEP 1 */
+@keyframes hw5_move {
+    from{width: 25px;
+    opacity: 0;}
+    to{width: 475px;
+    opacity: 1;}
+}
+/* STEP 1 */
+#logo {
+    width: 475px;
+    animation: hw5_move 5s;
+}
+  /* STEP 2 */
+body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+  /* STEP 3 */
+header { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  /* STEP 4 */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+  /* STEP 5 */
+nav a:visited {
+    color: #0000ff;
+}
+  /* STEP 6 */
+.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+    /* STEP 7 */
+.card {
+    flex-basis: 450px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+    /* STEP 8 */
+.pricing {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+    /* STEP 9 */
+img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+    /* STEP 10 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media screen and (min-width:900px){
+        /* STEP 11 */
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+        /* STEP 11 */
+    .nav_links {
+        flex-direction: row;
+    }
+        /* STEP 12 */
+    .pricing {
+        flex-basis: 275px;
+    }
+        /* STEP 12 */
+    .card {
+        flex-basis: 275px;
+    }
+        /* STEP 13 */
+    body > header {
+        position: sticky;
+        top: 0px;
+    }
+}
+    /* STEP 14 */
+@media (prefers-reduced-motion: reduce) { 
+    #logo {
+        animation: none;
+    } 
+}
+@media print {
+    /* STEP 17 */
+    nav {
+        width: 100%;
+    }
+    /* STEP 15/16 */
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    /* STEP 17 */
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /* STEP 18 */
+    .pricing {
+       align-items: flex-end;
+       flex-wrap: nowrap;
+    }
+    /* STEP 19 */
+    .card {
+        flex-basis: 325px;
+        border: 2px solid #45ADDD;
+    }
+    /* STEP 20 */
+    .gallery, #gallery {
+        display: none;
+    }
+    /* STEP 21 */
+    .card li:nth-child(2)::after {
+        content: "\1F44D";
+    }
+}
